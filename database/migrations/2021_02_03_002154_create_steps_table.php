@@ -17,7 +17,7 @@ class CreateStepsTable extends Migration
             $table->id();
             $table->text('description');
             $table->bigInteger('recipe_id')->unsigned();
-            $table->foreign('recipe_id')->references('id')->on('recipes');
+            $table->foreign('recipe_id')->references('id')->on('recipes')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

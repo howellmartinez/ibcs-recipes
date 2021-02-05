@@ -24,11 +24,18 @@ Route::get('/', function () {
     ]);
 });
 
+// Route::post('/recipes', function () {
+//     $new_recipe_name = request('recipe_name');
+//     $new_recipe = new App\Models\Recipe;
+//     $new_recipe->name = $new_recipe_name;
+//     $new_recipe->save();
+//     return redirect('/');
+// });
+
+// Raw SQL Version
 Route::post('/recipes', function () {
     $new_recipe_name = request('recipe_name');
-    $new_recipe = new App\Models\Recipe;
-    $new_recipe->name = $new_recipe_name;
-    $new_recipe->save();
+    DB::unprepared('INSERT INTO recipes (name) VALUES ("'. $new_recipe_name . '")');
     return redirect('/');
 });
 

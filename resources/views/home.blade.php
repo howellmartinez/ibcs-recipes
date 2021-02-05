@@ -6,7 +6,7 @@
         <li><a href="recipes/{{ strtolower($recipe->name) }}">{{ $recipe->name }}</a></li>
     @endforeach
     </ul>
-    <!-- <form method="post" action="/recipes">
+    <!-- <form method="POST" action="/recipes">
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
         <input type="text" id="recipe_name" name="recipe_name">
         <button class="btn btn-primary" type="submit">Add Recipe</button>
