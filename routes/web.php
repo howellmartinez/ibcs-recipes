@@ -39,6 +39,6 @@ Route::get('/recipes/{recipe_name}', function ($recipe_name) {
 });
 
 Route::get('test', function () {
-    $hotdog = App\Models\Recipe::whereName('Hotdog')->first();
-    dd($hotdog->steps);
+    $chicken = App\Models\Recipe::whereName('Chicken')->first();
+    dd($chicken->steps);
 });
